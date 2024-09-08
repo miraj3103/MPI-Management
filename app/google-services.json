@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1050978640299",
+    "project_id": "model-94",
+    "storage_bucket": "model-94.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050978640299:android:060772120c8826dd6f32ee",
+        "android_client_info": {
+          "package_name": "com.model.institute"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzOw_fKQYG6IkYzRXLjbYuXqZlWtYiZsg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

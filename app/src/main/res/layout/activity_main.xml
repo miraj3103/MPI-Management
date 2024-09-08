@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#85EDF759"
+    android:id="@+id/drawerLayout"
+    tools:openDrawer=""
+
+    >
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    >
+    <!--//***************-Toolbar Start-****************\\-->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/materialToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#85EDF759"
+            app:layout_anchor="@+id/appBarLayout"
+            app:layout_anchorGravity="center"
+            app:navigationIcon="@drawable/menu"
+            app:navigationIconTint="#000000"
+            app:title="Model Polytechnic Institute">
+            <!--//***************-Calender Start-****************\\-->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                >
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:backgroundTint="#EDF759"
+                    app:cardCornerRadius="5dp">
+
+                    <TextView
+                        android:id="@+id/time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center"
+                        android:text="date"
+                        android:textSize="14sp"
+                        android:textStyle="bold|italic"
+
+                        />
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+            <!--//***************-Calender End-****************\\-->
+
+        </com.google.android.material.appbar.MaterialToolbar>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <!--//***************-Toolbar End-****************\\-->
+    <!--//***************-Notice & marquee text start-****************\\-->
+    <RelativeLayout
+        android:id="@+id/notice_marquee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="#ffffff"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+
+        >
+
+        <TextView
+                android:id="@+id/notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notice"
+                android:textSize="16sp"
+                android:paddingRight="6dp"
+                android:textStyle="bold|italic"
+                android:background="#EDF759"
+                android:paddingLeft="7dp"
+                />
+
+        <TextView
+            android:id="@+id/marquee_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:textColor="#ff4500"
+            android:text="Simple application that shows how to use marquee, with a long text.Hi! This is Miraj a sofware  developer. I'm from Chowgacha currently i'm working my engineering at Model Polytechnic Institute.Simple application that shows how to use marquee, with a long text.Hi! This is Miraj a sofware  developer. I'm from Chowgacha currently i'm working my engineering at Model Polytechnic Institute. "
+            android:layout_toEndOf="@id/notice"
+
+            />
+    </RelativeLayout>
+    <!--//***************-Notice & marquee text end-****************\\-->
+
+    <!--//***************-Image slider start-****************\\-->
+
+    <RelativeLayout
+        android:id="@+id/image_slider_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/notice_marquee"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            >
+
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/image_slider"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:iss_auto_cycle="true"
+                app:iss_delay="0"
+                app:iss_error_image="@drawable/img1"
+                app:iss_period="1000"
+                app:iss_placeholder="@drawable/miraj"
+
+                />
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+    <!--//***************-Image slider end-****************\\-->
+
+
+    <!--//***************-Category start-****************\\-->
+    <RelativeLayout
+        android:id="@+id/categoryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/image_slider_layout"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Faculty  "
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            android:background="#EDF759"
+            android:paddingLeft="7dp"
+            android:layout_marginBottom="10dp"
+            />
+    </RelativeLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/grid_category"
+        android:layout_below="@id/categoryText"
+
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            >
+
+            <!--//***************-Insert Layout -****************\\-->
+            <include
+                android:id="@+id/insertLayout"
+                layout="@layout/category_grid" />
+            <!--//***************-Insert Layout  end -****************\\-->
+
+        </RelativeLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+    <!--//***************-Category end-****************\\-->
+
+
+    <!--//***************-Button list Start-****************\\-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/grid_category"
+        android:layout_above="@id/bottomNavigationView"
+        android:layout_marginTop="10dp"
+
+        >
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="3"
+
+            >
+            <soup.neumorphism.NeumorphCardView
+                android:layout_width="130dp"
+                android:layout_height="125dp"
+                app:neumorph_shapeType="flat"
+                android:backgroundTint="#9EEDF759"
+                android:layout_weight="1"
+                >
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/graduate"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginTop="15dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Teacher's List"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    />
+            </soup.neumorphism.NeumorphCardView>
+
+
+            <soup.neumorphism.NeumorphCardView
+                android:layout_width="130dp"
+                android:layout_height="125dp"
+                app:neumorph_shapeType="flat"
+                android:background="#9EEDF759"
+                android:layout_weight="1"
+                >
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/studentlist"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginTop="15dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Students List"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    />
+            </soup.neumorphism.NeumorphCardView>
+
+
+            <soup.neumorphism.NeumorphCardView
+                android:layout_width="130dp"
+                android:layout_height="125dp"
+                app:neumorph_shapeType="flat"
+                android:background="#9EEDF759"
+                android:layout_weight="1"
+                >
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/notice"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginTop="15dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Notice"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    />
+            </soup.neumorphism.NeumorphCardView>
+        </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:weightSum="3"
+                    >
+                    <soup.neumorphism.NeumorphCardView
+                        android:layout_width="130dp"
+                        android:layout_height="125dp"
+                        app:neumorph_shapeType="flat"
+                        android:background="#9EEDF759"
+                        android:layout_weight="1"
+                        >
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/mettingroom"
+                            android:layout_gravity="top|center_horizontal"
+                            android:layout_marginTop="15dp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Study Room"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="25dp"
+                            />
+                    </soup.neumorphism.NeumorphCardView>
+
+
+                    <soup.neumorphism.NeumorphCardView
+                        android:layout_width="130dp"
+                        android:layout_height="125dp"
+                        app:neumorph_shapeType="flat"
+                        android:background="#9EEDF759"
+                        android:layout_weight="1"
+                        >
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/job"
+                            android:layout_gravity="top|center_horizontal"
+                            android:layout_marginTop="15dp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Teacher's List"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="25dp"
+                            />
+                    </soup.neumorphism.NeumorphCardView>
+
+
+                    <soup.neumorphism.NeumorphCardView
+                        android:layout_width="130dp"
+                        android:layout_height="125dp"
+                        app:neumorph_shapeType="flat"
+                        android:background="#9EEDF759"
+                        android:layout_weight="1"
+                        >
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/newspaper"
+                            android:layout_gravity="top|center_horizontal"
+                            android:layout_marginTop="15dp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="News Paper"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="25dp"
+                            />
+                    </soup.neumorphism.NeumorphCardView>
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:weightSum="3"
+                    >
+                    <soup.neumorphism.NeumorphCardView
+                        android:layout_width="130dp"
+                        android:layout_height="125dp"
+                        app:neumorph_shapeType="flat"
+                        android:background="#9EEDF759"
+                        android:layout_weight="1"
+                        >
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/blood"
+                            android:layout_gravity="top|center_horizontal"
+                            android:layout_marginTop="15dp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Blood Donation"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="25dp"
+                            />
+                    </soup.neumorphism.NeumorphCardView>
+
+
+                    <soup.neumorphism.NeumorphCardView
+                        android:layout_width="130dp"
+                        android:layout_height="125dp"
+                        app:neumorph_shapeType="flat"
+                        android:background="#9EEDF759"
+                        android:layout_weight="1"
+                        >
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/calculator"
+                            android:layout_gravity="top|center_horizontal"
+                            android:layout_marginTop="15dp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Calculate GPA"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="25dp"
+                            />
+                    </soup.neumorphism.NeumorphCardView>
+
+
+                    <soup.neumorphism.NeumorphCardView
+                        android:layout_width="130dp"
+                        android:layout_height="125dp"
+                        app:neumorph_shapeType="flat"
+                        android:background="#9EEDF759"
+                        android:layout_weight="1"
+                        >
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/emergency"
+                            android:layout_gravity="top|center_horizontal"
+                            android:layout_marginTop="15dp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Emergency"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="25dp"
+                            />
+                    </soup.neumorphism.NeumorphCardView>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+    <!--//***************-Button List end-****************\\-->
+
+
+    <!--//***************-bottom menu start-****************\\-->
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#EDF759"
+            app:menu="@menu/bottom_menu"
+            app:itemIconTint="@drawable/item_selector"
+            style="@style/Widget.MaterialComponents.BottomNavigationView"
+
+            />
+
+    <!--//***************-bottom menu end-****************\\-->
+
+
+
+</RelativeLayout>
+
+    <!--//***************-Drawer Navigation Start-****************\\-->
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu"
+
+        />
+    <!--//***************-Drawer Navigation Start-****************\\-->
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
