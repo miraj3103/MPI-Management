@@ -7,7 +7,7 @@
     tools:context=".MainActivity"
     android:background="#85EDF759"
     android:id="@+id/drawerLayout"
-    tools:openDrawer=""
+    tools:openDrawer="start"
 
     >
 
@@ -33,7 +33,7 @@
             android:id="@+id/materialToolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#85EDF759"
+            android:background="#EDF759"
             app:layout_anchor="@+id/appBarLayout"
             app:layout_anchorGravity="center"
             app:navigationIcon="@drawable/menu"
@@ -230,10 +230,11 @@
 
             >
             <soup.neumorphism.NeumorphCardView
+                android:id="@+id/card_teacher_list"
                 android:layout_width="130dp"
                 android:layout_height="125dp"
                 app:neumorph_shapeType="flat"
-                android:backgroundTint="#9EEDF759"
+                android:backgroundTint="#EDF759"
                 android:layout_weight="1"
                 >
                 <ImageView
@@ -254,10 +255,11 @@
 
 
             <soup.neumorphism.NeumorphCardView
+                android:id="@+id/card_student_list"
                 android:layout_width="130dp"
                 android:layout_height="125dp"
                 app:neumorph_shapeType="flat"
-                android:background="#9EEDF759"
+                android:background="#EDF759"
                 android:layout_weight="1"
                 >
                 <ImageView
@@ -278,10 +280,11 @@
 
 
             <soup.neumorphism.NeumorphCardView
+                android:id="@+id/card_notice"
                 android:layout_width="130dp"
                 android:layout_height="125dp"
                 app:neumorph_shapeType="flat"
-                android:background="#9EEDF759"
+                android:background="#EDF759"
                 android:layout_weight="1"
                 >
                 <ImageView
@@ -311,10 +314,11 @@
                     android:weightSum="3"
                     >
                     <soup.neumorphism.NeumorphCardView
+                        android:id="@+id/card_study_room"
                         android:layout_width="130dp"
                         android:layout_height="125dp"
                         app:neumorph_shapeType="flat"
-                        android:background="#9EEDF759"
+                        android:background="#EDF759"
                         android:layout_weight="1"
                         >
                         <ImageView
@@ -335,10 +339,11 @@
 
 
                     <soup.neumorphism.NeumorphCardView
+                        android:id="@+id/card_job_list"
                         android:layout_width="130dp"
                         android:layout_height="125dp"
                         app:neumorph_shapeType="flat"
-                        android:background="#9EEDF759"
+                        android:background="#EDF759"
                         android:layout_weight="1"
                         >
                         <ImageView
@@ -351,7 +356,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Teacher's List"
+                            android:text="Job List"
                             android:layout_gravity="center"
                             android:layout_marginTop="25dp"
                             />
@@ -359,10 +364,11 @@
 
 
                     <soup.neumorphism.NeumorphCardView
+                        android:id="@+id/card_news_paper"
                         android:layout_width="130dp"
                         android:layout_height="125dp"
                         app:neumorph_shapeType="flat"
-                        android:background="#9EEDF759"
+                        android:background="#EDF759"
                         android:layout_weight="1"
                         >
                         <ImageView
@@ -392,6 +398,7 @@
                     android:weightSum="3"
                     >
                     <soup.neumorphism.NeumorphCardView
+                        android:id="@+id/car_blood_donation"
                         android:layout_width="130dp"
                         android:layout_height="125dp"
                         app:neumorph_shapeType="flat"
@@ -416,6 +423,7 @@
 
 
                     <soup.neumorphism.NeumorphCardView
+                        android:id="@+id/car_cgpa_calculator"
                         android:layout_width="130dp"
                         android:layout_height="125dp"
                         app:neumorph_shapeType="flat"
@@ -440,6 +448,7 @@
 
 
                     <soup.neumorphism.NeumorphCardView
+                        android:id="@+id/card_emergency"
                         android:layout_width="130dp"
                         android:layout_height="125dp"
                         app:neumorph_shapeType="flat"

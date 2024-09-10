@@ -37,6 +37,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+import soup.neumorphism.NeumorphCardView;
+
 public class MainActivity extends AppCompatActivity {
     ImageSlider imageSlider;
     DrawerLayout drawerLayout;
@@ -45,15 +47,24 @@ public class MainActivity extends AppCompatActivity {
     GridView gridView;
     NavigationView navigationView;
     BottomNavigationView bottomNavigationView;
+    NeumorphCardView new_paper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
         //*************---Firebase cloud method start----***********\\
         askNotificationPermission();
         initToken();
         //*************---Firebase cloud method end----***********\\
+
+
+
+
+        //*************---Find View By Id Start----***********\\
 
         drawerLayout = findViewById(R.id.drawerLayout);
         materialToolbar = findViewById(R.id.materialToolbar);
@@ -62,10 +73,18 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         marquee_text = findViewById(R.id.marquee_text);
 
+        //*************---Find View By Id Start----***********\\
+
+
+
+
+
 
         //*************---marquee Start----***********\\
         marquee_text.setSelected(true);
         //*************---marquee end----***********\\
+
+
 
 
 //*************---Calender Start----***********\\
@@ -77,10 +96,16 @@ public class MainActivity extends AppCompatActivity {
         //*************---Calender end----***********\\
 
 
+
+
+
         //*************---NavigationView joint start----***********\\
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(MainActivity.this,drawerLayout,materialToolbar,R.string.close_drawer,R.string.open_drawer);
         drawerLayout.addDrawerListener(toggle);
         //*************---NavigationView joint end----***********\\
+
+
+
 
 
         //*************---NavigationView start----***********\\
@@ -108,6 +133,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
         //*************---Image Slider Start----***********\\
         imageSlider =findViewById(R.id.image_slider);
 
@@ -121,6 +149,9 @@ public class MainActivity extends AppCompatActivity {
 
         imageSlider.setImageList(imageList);
         //*************---Image Slider end----***********\\
+
+
+
 
 
         //*************---Bottom NavigationView  start----***********\\
@@ -142,7 +173,17 @@ public class MainActivity extends AppCompatActivity {
         //*************---Bottom NavigationView  end----***********\\
 
 
-    }
+
+
+
+    }//--%%###%%%%%%###-- On Create end --%%###%%%%%%###--
+
+
+
+
+
+
+
     //*************---Firebase cloud message start----***********\\
 
     // Declare the launcher at the top of your Activity/Fragment:
@@ -189,6 +230,10 @@ public class MainActivity extends AppCompatActivity {
     //*************---Firebase cloud message end----***********\\
 
 
+
+
+
+
     //*************---Firebase push notification start----***********\\
 
     private void initToken(){
@@ -211,6 +256,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //*************---Firebase push notification end----***********\\
+
+
+
 
 
 }
