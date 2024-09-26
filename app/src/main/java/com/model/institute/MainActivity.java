@@ -2,6 +2,8 @@ package com.model.institute;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     BottomNavigationView bottomNavigationView;
     NeumorphCardView new_paper;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,11 +75,23 @@ public class MainActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.navigationView);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         marquee_text = findViewById(R.id.marquee_text);
+        sharedPreferences = getSharedPreferences("myApp",MODE_PRIVATE);
 
         //*************---Find View By Id Start----***********\\
 
 
 
+
+        //*************---Login check Start----***********\\
+
+        String email = sharedPreferences.getString("email","");
+
+        if (email.length()<=0){
+
+            startActivity(new Intent(MainActivity.this,login_Page.class));
+            finish();
+        }
+        //*************---Login check end----***********\\
 
 
 

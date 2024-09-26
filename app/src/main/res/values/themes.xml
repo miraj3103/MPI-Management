@@ -4,7 +4,7 @@
 
         <item name="colorPrimary">@color/black</item>
         <!-- *******-Status bar Color  Start-******* -->
-        <item name="android:statusBarColor" tools:targetApi = "UPSIDE_DOWN_CAKE">#EDF759</item>
+        <item name="android:statusBarColor" tools:targetApi="UPSIDE_DOWN_CAKE">#EDF759</item>
         <!-- *******-Status bar Color  end-******* -->
 
         <item name="cursorColor">@color/black</item>
