@@ -1,5 +1,7 @@
 package com.model.institute;
 
+import static com.model.institute.EncryptionDecryption.encryption;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -46,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     MaterialToolbar materialToolbar;
     TextView time,marquee_text;
-    GridView gridView;
     NavigationView navigationView;
     BottomNavigationView bottomNavigationView;
     NeumorphCardView new_paper;
@@ -57,18 +58,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-        //*************---Firebase cloud method start----***********\\
-        askNotificationPermission();
-        initToken();
-        //*************---Firebase cloud method end----***********\\
-
-
-
-
         //*************---Find View By Id Start----***********\\
-
         drawerLayout = findViewById(R.id.drawerLayout);
         materialToolbar = findViewById(R.id.materialToolbar);
         time = findViewById(R.id.time);
@@ -76,23 +66,52 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         marquee_text = findViewById(R.id.marquee_text);
         sharedPreferences = getSharedPreferences("myApp",MODE_PRIVATE);
-
         //*************---Find View By Id Start----***********\\
 
 
 
+        //*************---Encryption check Start----***********\\
+        try {
+            EncryptionDecryption.MY_KEY = EncryptionDecryption.encryption("Miraj6517","A8d7G6j2B5f3E1h9");
+            Log.d("EncryptionTest", "MY_KEY: " + EncryptionDecryption.MY_KEY);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        //*************---Encryption check End----***********\\
 
         //*************---Login check Start----***********\\
-
-        String email = sharedPreferences.getString("email","");
-
-        if (email.length()<=0){
-
-            startActivity(new Intent(MainActivity.this,login_Page.class));
+        String email = sharedPreferences.getString("email", "");
+        if (email.length() <= 0) {
+            startActivity(new Intent(MainActivity.this, login_Page.class));
             finish();
         }
         //*************---Login check end----***********\\
 
+
+
+//        //*************---Encryption check Start----***********\\
+//        try {
+//            EncryptionDecryption.MY_KEY = EncryptionDecryption.encryption("miraj6517","A8d7G6j2B5f3E1h9");
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
+//
+//        //*************---Encryption check End----***********\\
+//
+//
+//        //*************---Login check Start----***********\\
+//        String email = sharedPreferences.getString("email","");
+//        if (email.length()<=0){
+//            startActivity(new Intent(MainActivity.this,login_Page.class));
+//            finish();
+//        }
+//        //*************---Login check end----***********\\
+
+
+        //*************---Firebase cloud method start----***********\\
+        askNotificationPermission();
+        initToken();
+        //*************---Firebase cloud method end----***********\\
 
 
         //*************---marquee Start----***********\\
@@ -124,7 +143,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         //*************---NavigationView start----***********\\
-
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -143,7 +161,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
         //*************---NavigationView  end----***********\\
 
 
@@ -195,13 +212,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
-
     //*************---Firebase cloud message start----***********\\
-
-    // Declare the launcher at the top of your Activity/Fragment:
     private final ActivityResultLauncher<String> requestPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                 if (isGranted) {
@@ -240,17 +251,10 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
-
     //*************---Firebase cloud message end----***********\\
 
 
-
-
-
-
-    //*************---Firebase push notification start----***********\\
-
+    //*************---Firebase FCM TOKEN----***********\\
     private void initToken(){
         FirebaseMessaging.getInstance().getToken()
                 .addOnCompleteListener(new OnCompleteListener<String>() {
@@ -269,11 +273,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
-
-    //*************---Firebase push notification end----***********\\
-
-
-
+    //*************---Firebase FCM TOKEN----***********\\
 
 
 }

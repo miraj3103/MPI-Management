@@ -13,6 +13,7 @@ import android.text.Html;
 import android.util.Base64;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,6 +48,7 @@ public class student_signup extends AppCompatActivity {
     TextView login,student_profile_photo_change;
     ImageView student_profile_photo;
 
+
     @SuppressLint("WrongThread")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +70,7 @@ public class student_signup extends AppCompatActivity {
         ed_blood = findViewById(R.id.ed_blood);
         btn_sign_up = findViewById(R.id.btn_sign_up);
         login = findViewById(R.id.login);
+
         //  --*********** Find View By Id end-----*********---\\
 
 
@@ -75,8 +78,9 @@ public class student_signup extends AppCompatActivity {
         login.setText(Html.fromHtml("<u>Login?</u>"));
         //  --*********** under line text make korar ses---\\
 
-        // --***********-- Button signup Start --************\\
 
+
+        // --***********-- Button signup Start --************\\
         btn_sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,14 +109,14 @@ public class student_signup extends AppCompatActivity {
 
 
                 //simple volley string request
-                String url = "http://192.168.0.116/mpi/connect_database.php";
+                String url = "http://192.168.0.103/mpi/connect_database.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         new AlertDialog.Builder(student_signup.this)
                                 .setTitle("Sign up response")
-                                .setMessage(""+response)
+                                .setMessage(response)
                                 .create()
                                 .show();
                     }
@@ -120,6 +124,11 @@ public class student_signup extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(student_signup.this,""+error,Toast.LENGTH_LONG).show();
+                        new AlertDialog.Builder(student_signup.this)
+                                .setTitle("Sign up response")
+                                .setMessage(""+error)
+                                .create()
+                                .show();
                     }
                 }) {
                     @Nullable
@@ -136,6 +145,7 @@ public class student_signup extends AppCompatActivity {
                         myMap.put("password", password);
                         myMap.put("blood", blood);
                         myMap.put("image", image);
+                        myMap.put("key",EncryptionDecryption.MY_KEY);
                         return myMap;
                     }
                 };

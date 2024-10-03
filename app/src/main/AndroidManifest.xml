@@ -25,16 +25,16 @@
         <activity
             android:name=".teacher_signup"
             android:exported="false" />
-        <activity
-            android:name=".Teacher_signup"
-            android:exported="false"
-            android:theme="@style/Theme.ImageSlider" />
+<!--        <activity-->
+<!--            android:name=".Teacher_signup"-->
+<!--            android:exported="false"-->
+<!--            android:theme="@style/Theme.ImageSlider" />-->
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-        <activity
-            android:name=".SIgn_up"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".SIgn_up"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".login_Page"
             android:exported="false" />

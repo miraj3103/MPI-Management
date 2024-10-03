@@ -8,13 +8,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -79,22 +76,33 @@ public class teacher_signup extends AppCompatActivity {
 
 
                 //simple volley string request
-                String url = "https://www.google.com/";
+                String url = "http://192.168.0.103/mpi/teacher_connect_database.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+
+                        new AlertDialog.Builder(teacher_signup.this)
+                                .setTitle("Teacher Sign Up")
+                                .setMessage("" + response)
+                                .create()
+                                .show();
 
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
 
+                        new AlertDialog.Builder(teacher_signup.this)
+                                .setTitle("Teacher Sign Up")
+                                .setMessage("" + error)
+                                .create()
+                                .show();
                     }
                 }) {
                     @Nullable
                     @Override
-                    protected Map<String, String> getParams() throws AuthFailureError {
+                    protected Map<String, String> getParams() throws AuthFailureError{
                         Map myMap = new HashMap<String, String>();
                         myMap.put("name",name);
                         myMap.put("number", contact_number);
@@ -104,7 +112,9 @@ public class teacher_signup extends AppCompatActivity {
                         myMap.put("password", password);
                         myMap.put("blood", blood);
                         myMap.put("image", image);
+                        myMap.put("key",EncryptionDecryption.MY_KEY);
                         return myMap;
+
                     }
                 };
 

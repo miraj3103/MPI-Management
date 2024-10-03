@@ -41,9 +41,6 @@ public class login_Page extends AppCompatActivity {
         sign_upp = findViewById(R.id.sign_upp);
 
 
-
-
-
         //  --*********** under line text make korar jonno---\\
 
         forgot_pass.setText(Html.fromHtml("<u>Forgot Password?</u>"));
@@ -54,7 +51,6 @@ public class login_Page extends AppCompatActivity {
         sign_upp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
 
                 final Handler handler = new Handler();
@@ -69,8 +65,7 @@ public class login_Page extends AppCompatActivity {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
 
-                                        startActivity(new Intent(login_Page.this,student_signup.class));
-
+                                        startActivity(new Intent(login_Page.this, student_signup.class));
 
 
                                     }
@@ -79,7 +74,7 @@ public class login_Page extends AppCompatActivity {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
 
-                                        startActivity(new Intent(login_Page.this,teacher_signup.class));
+                                        startActivity(new Intent(login_Page.this, teacher_signup.class));
 
                                     }
                                 })
@@ -99,7 +94,7 @@ public class login_Page extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(login_Page.this,MainActivity.class));
+                startActivity(new Intent(login_Page.this, MainActivity.class));
             }
         });
 

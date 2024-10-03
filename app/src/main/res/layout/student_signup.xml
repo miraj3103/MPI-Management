@@ -11,7 +11,9 @@
     <RelativeLayout
         android:id="@+id/student_sign_up"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+
+        >
 
 
         <TextView
@@ -58,8 +60,8 @@
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="10dp"
-                        android:src="@drawable/graduate"
-                        android:tooltipText="Profile Image" />
+                        android:src="@drawable/change_photo"
+                        />
 
                     <TextView
                         android:id="@+id/student_profile_photo_change"
@@ -68,7 +70,11 @@
                         android:layout_alignParentBottom="true"
                         android:background="#5E494747"
                         android:text="Upload Image"
-                        android:textAlignment="center" />
+                        android:layout_marginStart="5dp"
+                        android:textAlignment="center"
+                        android:layout_below="@id/student_profile_photo"
+
+                        />
 
                 </RelativeLayout>
 
@@ -160,8 +166,8 @@
                         android:id="@+id/ed_season"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:inputType="text|number"
                         android:hint="Season"
-                        android:inputType="numberDecimal"
                         android:padding="15dp"
                         android:textColor="@color/black" />
 
